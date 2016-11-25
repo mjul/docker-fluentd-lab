@@ -1,2 +1,3 @@
-# docker-fluentd-lab
-Trying Docker and Fluentd together
+# Docker Fluentd Lab
+Trying Docker and Fluentd together.
+

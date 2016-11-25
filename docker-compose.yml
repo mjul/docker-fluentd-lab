@@ -1,0 +1,18 @@
+version: '2'
+services:
+  fluentd:
+    build: fluentd
+    ports:
+    - "24224:24224"
+  capitalizer:
+    build: capitalizer
+    logging:
+      driver: fluentd
+      options:
+        fluentd-address: localhost:24224
+        tag: "docker.{{.Name}}"
+    links:
+    -  fluentd
+    depends_on:
+    - fluentd
+    
